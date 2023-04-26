@@ -5,6 +5,10 @@ VisualStudioVersion = 17.6.33617.297
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Model", "ppedv.Rent-A-Wheel.Model\ppedv.Rent-A-Wheel.Model.csproj", "{2FC6EF8B-9AE4-4DF1-AC9D-CEBB657482C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Data.EfCore", "ppedv.Rent-A-Wheel.Data.EfCore\ppedv.Rent-A-Wheel.Data.EfCore.csproj", "{30F5F6B8-601A-462D-8767-15159A0F80A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Data.EfCore.Tests", "ppedv.Rent-A-Wheel.Data.EfCore.Tests\ppedv.Rent-A-Wheel.Data.EfCore.Tests.csproj", "{FAECC8FF-D2EA-4832-AEB0-E645A6C78EF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{2FC6EF8B-9AE4-4DF1-AC9D-CEBB657482C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FC6EF8B-9AE4-4DF1-AC9D-CEBB657482C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FC6EF8B-9AE4-4DF1-AC9D-CEBB657482C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F5F6B8-601A-462D-8767-15159A0F80A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F5F6B8-601A-462D-8767-15159A0F80A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F5F6B8-601A-462D-8767-15159A0F80A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F5F6B8-601A-462D-8767-15159A0F80A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAECC8FF-D2EA-4832-AEB0-E645A6C78EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAECC8FF-D2EA-4832-AEB0-E645A6C78EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAECC8FF-D2EA-4832-AEB0-E645A6C78EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAECC8FF-D2EA-4832-AEB0-E645A6C78EF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
