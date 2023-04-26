@@ -123,6 +123,12 @@ namespace ppedv.Rent_A_Wheel.Data.EfCore.Tests
                 con.Cars.Add(car);
                 con.SaveChanges();
             }
+
+            using (var con = new EfContext(conString))
+            {
+                var loaded = con.Cars.Find(car.Id);
+                loaded.Should().BeEquivalentTo(car, x => x.IgnoringCyclicReferences());
+            }
         }
 
         internal class PropertyNameOmitter : ISpecimenBuilder
