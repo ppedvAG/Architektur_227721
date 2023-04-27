@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Logic", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Logic.Tests", "ppedv.Rent-A-Wheel.Logic.Tests\ppedv.Rent-A-Wheel.Logic.Tests.csproj", "{830BAF24-03BF-429A-8913-DE2D2058FA5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.UI.Wpf", "ppedv.Rent-A-Wheel.UI.Wpf\ppedv.Rent-A-Wheel.UI.Wpf.csproj", "{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{830BAF24-03BF-429A-8913-DE2D2058FA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{830BAF24-03BF-429A-8913-DE2D2058FA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{830BAF24-03BF-429A-8913-DE2D2058FA5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
