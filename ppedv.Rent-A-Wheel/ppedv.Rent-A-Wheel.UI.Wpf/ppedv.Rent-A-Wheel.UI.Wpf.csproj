@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\ppedv.Rent-A-Wheel.Data.EfCore\ppedv.Rent-A-Wheel.Data.EfCore.csproj" />
+    <ProjectReference Include="..\ppedv.Rent-A-Wheel.Logic\ppedv.Rent-A-Wheel.Logic.csproj" />
+    <ProjectReference Include="..\ppedv.Rent-A-Wheel.Model\ppedv.Rent-A-Wheel.Model.csproj" />
   </ItemGroup>
 
 </Project>

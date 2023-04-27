@@ -3,9 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:ppedv.Rent_A_Wheel.UI.Wpf.Views"
+             xmlns:local="clr-namespace:ppedv.Rent_A_Wheel.UI.Wpf.Views" xmlns:viewmodels="clr-namespace:ppedv.Rent_A_Wheel.UI.Wpf.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewmodels:CarViewModel/>
+    </UserControl.DataContext>
     <DockPanel>
         <WrapPanel Margin="4" DockPanel.Dock="Top">
             <Button>💾 Speichen</Button>
@@ -19,7 +22,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <DataGrid />
+            <DataGrid ItemsSource="{Binding CarList}"
+                      SelectedItem="{Binding SelectedCar}" />
             <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch"/>
             <Grid Grid.Column="2">
                 <Grid.ColumnDefinitions>
@@ -36,17 +40,17 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Label>Manufacturer</Label>
-                <TextBox Grid.Column="1"/>
+                <TextBox Text="{Binding SelectedCar.Manufacturer}" Grid.Column="1"/>
                 <Label Grid.Row="1">Model</Label>
-                <TextBox Grid.Row="1" Grid.Column="1"/>
+                <TextBox Text="{Binding SelectedCar.Model}" Grid.Row="1" Grid.Column="1"/>
                 <Label Grid.Row="2">Man. Date</Label>
-                <DatePicker Grid.Column="1" Grid.Row="2"/>
+                <DatePicker SelectedDate="{Binding SelectedCar.ManufacturingDate}" Grid.Column="1" Grid.Row="2"/>
                 <Label Grid.Row="3">KW</Label>
-                <TextBox Grid.Row="3" Grid.Column="1"/>
+                <TextBox Text="{Binding SelectedCar.KW}" Grid.Row="3" Grid.Column="1"/>
                 <Label Grid.Row="4">Seats</Label>
-                <TextBox Grid.Row="4" Grid.Column="1"/>
+                <TextBox Text="{Binding SelectedCar.Seats}" Grid.Row="4" Grid.Column="1"/>
                 <Label Grid.Row="5">Color</Label>
-                <TextBox Grid.Row="5" Grid.Column="1"/>
+                <TextBox Text="{Binding SelectedCar.Color}" Grid.Row="5" Grid.Column="1"/>
             </Grid>
         </Grid>
     </DockPanel>
