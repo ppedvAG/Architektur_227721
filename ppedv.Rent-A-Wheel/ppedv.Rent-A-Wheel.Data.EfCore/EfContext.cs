@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ppedv.Rent_A_Wheel.Model;
+using ppedv.Rent_A_Wheel.Model.Domain;
 
 namespace ppedv.Rent_A_Wheel.Data.EfCore
 {

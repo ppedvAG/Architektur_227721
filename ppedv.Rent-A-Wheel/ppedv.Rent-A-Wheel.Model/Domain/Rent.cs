@@ -1,4 +1,4 @@
-﻿namespace ppedv.Rent_A_Wheel.Model
+﻿namespace ppedv.Rent_A_Wheel.Model.Domain
 {
     public class Rent : Entity
     {

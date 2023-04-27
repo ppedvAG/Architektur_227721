@@ -1,7 +1,7 @@
 using AutoFixture;
 using AutoFixture.Kernel;
 using FluentAssertions;
-using ppedv.Rent_A_Wheel.Model;
+using ppedv.Rent_A_Wheel.Model.Domain;
 using System.Reflection;
 
 namespace ppedv.Rent_A_Wheel.Data.EfCore.Tests
