@@ -11,8 +11,8 @@
     </UserControl.DataContext>
     <DockPanel>
         <WrapPanel Margin="4" DockPanel.Dock="Top">
-            <Button>💾 Speichen</Button>
-            <Button>🆕 Neu</Button>
+            <Button Command="{Binding SaveCommand}">💾 Speichen</Button>
+            <Button Command="{Binding NewCommand}">🆕 Neu</Button>
             <Button>❌ Löschen</Button>
         </WrapPanel>
         <Grid>
@@ -45,7 +45,10 @@
                 <TextBox Text="{Binding SelectedCar.Model}" Grid.Row="1" Grid.Column="1"/>
                 <Label Grid.Row="2">Man. Date</Label>
                 <DatePicker SelectedDate="{Binding SelectedCar.ManufacturingDate}" Grid.Column="1" Grid.Row="2"/>
-                <Label Grid.Row="3">KW</Label>
+                <StackPanel Orientation="Horizontal" Grid.Row="3">
+                    <Label>KW</Label>
+                    <TextBlock Text="{Binding PS}"/>
+                </StackPanel>
                 <TextBox Text="{Binding SelectedCar.KW}" Grid.Row="3" Grid.Column="1"/>
                 <Label Grid.Row="4">Seats</Label>
                 <TextBox Text="{Binding SelectedCar.Seats}" Grid.Row="4" Grid.Column="1"/>
