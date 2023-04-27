@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.UI.Wpf",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.UI.DevConsole", "ppedv.Rent-A-Wheel.UI.DevConsole\ppedv.Rent-A-Wheel.UI.DevConsole.csproj", "{3543B869-A504-46ED-A3BB-C7234DF4571D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.UI.ASP_MVC", "ppedv.Rent-A-Wheel.UI.ASP_MVC\ppedv.Rent-A-Wheel.UI.ASP_MVC.csproj", "{605E0797-467D-4EEA-B73D-E7472A061B12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3543B869-A504-46ED-A3BB-C7234DF4571D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3543B869-A504-46ED-A3BB-C7234DF4571D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3543B869-A504-46ED-A3BB-C7234DF4571D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{605E0797-467D-4EEA-B73D-E7472A061B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{605E0797-467D-4EEA-B73D-E7472A061B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{605E0797-467D-4EEA-B73D-E7472A061B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{605E0797-467D-4EEA-B73D-E7472A061B12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
