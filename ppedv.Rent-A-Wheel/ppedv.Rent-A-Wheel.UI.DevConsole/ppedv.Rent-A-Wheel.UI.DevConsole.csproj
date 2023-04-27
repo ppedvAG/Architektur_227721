@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>ppedv.Rent_A_Wheel.UI.DevConsole</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ppedv.Rent-A-Wheel.Data.EfCore\ppedv.Rent-A-Wheel.Data.EfCore.csproj" />
+    <ProjectReference Include="..\ppedv.Rent-A-Wheel.Logic\ppedv.Rent-A-Wheel.Logic.csproj" />
+    <ProjectReference Include="..\ppedv.Rent-A-Wheel.Model\ppedv.Rent-A-Wheel.Model.csproj" />
+  </ItemGroup>
+
+</Project>

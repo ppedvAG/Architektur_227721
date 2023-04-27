@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.Data.EfC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.Data.EfCore.Tests", "ppedv.Rent-A-Wheel.Data.EfCore.Tests\ppedv.Rent-A-Wheel.Data.EfCore.Tests.csproj", "{FAECC8FF-D2EA-4832-AEB0-E645A6C78EF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Logic", "ppedv.Rent-A-Wheel.Logic\ppedv.Rent-A-Wheel.Logic.csproj", "{E825773C-32B3-4741-B5BE-D1A53744813B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.Logic", "ppedv.Rent-A-Wheel.Logic\ppedv.Rent-A-Wheel.Logic.csproj", "{E825773C-32B3-4741-B5BE-D1A53744813B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Logic.Tests", "ppedv.Rent-A-Wheel.Logic.Tests\ppedv.Rent-A-Wheel.Logic.Tests.csproj", "{830BAF24-03BF-429A-8913-DE2D2058FA5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.Logic.Tests", "ppedv.Rent-A-Wheel.Logic.Tests\ppedv.Rent-A-Wheel.Logic.Tests.csproj", "{830BAF24-03BF-429A-8913-DE2D2058FA5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.UI.Wpf", "ppedv.Rent-A-Wheel.UI.Wpf\ppedv.Rent-A-Wheel.UI.Wpf.csproj", "{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.UI.Wpf", "ppedv.Rent-A-Wheel.UI.Wpf\ppedv.Rent-A-Wheel.UI.Wpf.csproj", "{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.UI.DevConsole", "ppedv.Rent-A-Wheel.UI.DevConsole\ppedv.Rent-A-Wheel.UI.DevConsole.csproj", "{3543B869-A504-46ED-A3BB-C7234DF4571D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD7DD6AC-DC9B-4A68-9D6D-F8A3AFD95D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3543B869-A504-46ED-A3BB-C7234DF4571D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3543B869-A504-46ED-A3BB-C7234DF4571D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3543B869-A504-46ED-A3BB-C7234DF4571D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3543B869-A504-46ED-A3BB-C7234DF4571D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

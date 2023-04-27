@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using Microsoft.Extensions.DependencyInjection;
+using ppedv.Rent_A_Wheel.Model.Contracts;
+using ppedv.Rent_A_Wheel.UI.Wpf.ViewModels;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ppedv.Rent_A_Wheel.UI.Wpf.Views
 {
@@ -23,6 +13,9 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.Views
         public CarView()
         {
             InitializeComponent();
+
+            this.DataContext = App.Current.Services.GetService<CarViewModel>();
+            //this.DataContext = new CarViewModel(App.Current.Services.GetService<IRepository>());
         }
     }
 }

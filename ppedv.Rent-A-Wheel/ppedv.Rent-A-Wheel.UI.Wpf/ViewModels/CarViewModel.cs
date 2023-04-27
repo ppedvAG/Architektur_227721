@@ -46,9 +46,9 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
             }
         }
 
-        //todo: ersetzen durch DI
-        public CarViewModel() : this(new Data.EfCore.EfRepository("Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Trusted_Connection=true;"))
-        { }
+        ////todo: ersetzen durch DI
+        //public CarViewModel() : this(new Data.EfCore.EfRepository("Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Trusted_Connection=true;"))
+        //{ }
 
         public CarViewModel(IRepository repository)
         {

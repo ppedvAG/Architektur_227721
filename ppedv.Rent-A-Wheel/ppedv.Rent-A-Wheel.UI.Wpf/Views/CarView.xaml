@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:ppedv.Rent_A_Wheel.UI.Wpf.Views" xmlns:viewmodels="clr-namespace:ppedv.Rent_A_Wheel.UI.Wpf.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <viewmodels:CarViewModel/>
-    </UserControl.DataContext>
     <DockPanel>
         <WrapPanel Margin="4" DockPanel.Dock="Top">
             <Button Command="{Binding SaveCommand}">💾 Speichen</Button>
