@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.Data.EfC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Logic", "ppedv.Rent-A-Wheel.Logic\ppedv.Rent-A-Wheel.Logic.csproj", "{E825773C-32B3-4741-B5BE-D1A53744813B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.Logic.Tests", "ppedv.Rent-A-Wheel.Logic.Tests\ppedv.Rent-A-Wheel.Logic.Tests.csproj", "{830BAF24-03BF-429A-8913-DE2D2058FA5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{E825773C-32B3-4741-B5BE-D1A53744813B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E825773C-32B3-4741-B5BE-D1A53744813B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E825773C-32B3-4741-B5BE-D1A53744813B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{830BAF24-03BF-429A-8913-DE2D2058FA5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{830BAF24-03BF-429A-8913-DE2D2058FA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{830BAF24-03BF-429A-8913-DE2D2058FA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{830BAF24-03BF-429A-8913-DE2D2058FA5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

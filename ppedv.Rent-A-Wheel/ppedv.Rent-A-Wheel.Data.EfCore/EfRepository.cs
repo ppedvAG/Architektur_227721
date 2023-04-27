@@ -5,7 +5,7 @@ namespace ppedv.Rent_A_Wheel.Data.EfCore
 {
     public class EfRepository : IRepository
     {
-        EfContext context;
+        readonly EfContext context;
 
         public EfRepository(string conString)
         {
