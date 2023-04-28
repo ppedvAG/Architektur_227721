@@ -10,13 +10,4 @@ namespace ppedv.Rent_A_Wheel.Model.Contracts
         void Update(T entity);
         void Delete(int id);
     }
-    public interface IUnitOfWork
-    {
-        IRepository<Car> CarRepository { get; }
-        IRepository<Customer> CustomerRepository { get; }
-        IRepository<Rent> RentRepository { get; }
-
-
-        void SaveAll();
-    }
 }
