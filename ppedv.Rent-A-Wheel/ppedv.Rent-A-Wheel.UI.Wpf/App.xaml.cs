@@ -34,7 +34,8 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf
             var services = new ServiceCollection();
             string conString = "Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Trusted_Connection=true;";
 
-            services.AddTransient<IRepository, EfRepository>(x => new EfRepository(conString));
+            //services.AddTransient<IRepository, EfRepository>(x => new EfRepository(conString));
+            services.AddTransient<IUnitOfWork, EfUnitOfWork>(x => new EfUnitOfWork(conString));
 
             services.AddSingleton<CarViewModel>();
 

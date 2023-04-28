@@ -18,8 +18,10 @@ namespace ppedv.Rent_A_Wheel.Logic.Tests
         [Fact]
         public void GetCarThatWasRentedTheMostDays_no_cars_in_db_should_return_null()
         {
-            var mock = new Mock<IRepository>();
-            var carStatService = new CarStatService(mock.Object);
+            var repoMock = new Mock<IRepository<Car>>();
+            var uowMock = new Mock<IUnitOfWork>();
+            uowMock.Setup(x => x.CarRepository).Returns(repoMock.Object);
+            var carStatService = new CarStatService(uowMock.Object);
 
             var result = carStatService.GetCarThatWasRentedTheMostDays();
 
@@ -29,8 +31,8 @@ namespace ppedv.Rent_A_Wheel.Logic.Tests
         [Fact]
         public void GetCarThatWasRentedTheMostDays_3_cars_the_blue_should_have_most_days()
         {
-            var mock = new Mock<IRepository>();
-            mock.Setup(x => x.GetAll<Car>()).Returns(() =>
+            var repoMock = new Mock<IRepository<Car>>();
+            repoMock.Setup(x => x.GetAll()).Returns(() =>
             {
                 var c1 = new Car() { Color = "red" };
                 c1.Rents.Add(new Rent()
@@ -53,7 +55,9 @@ namespace ppedv.Rent_A_Wheel.Logic.Tests
 
                 return new Car[] { c1, c2, c3 };
             });
-            var carStatService = new CarStatService(mock.Object);
+            var uowMock = new Mock<IUnitOfWork>();
+            uowMock.Setup(x => x.CarRepository).Returns(repoMock.Object);
+            var carStatService = new CarStatService(uowMock.Object);
 
             var result = carStatService.GetCarThatWasRentedTheMostDays();
 

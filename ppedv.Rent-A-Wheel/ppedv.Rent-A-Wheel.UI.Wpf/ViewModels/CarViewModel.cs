@@ -13,7 +13,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
 {
     internal class CarViewModel : ObservableObject
     {
-        private readonly IRepository repository;
+        private readonly IUnitOfWork unitOfWork;
         private Car selectedCar;
 
 
@@ -50,27 +50,32 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
         //public CarViewModel() : this(new Data.EfCore.EfRepository("Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Trusted_Connection=true;"))
         //{ }
 
-        public CarViewModel(IRepository repository)
+        public CarViewModel(IUnitOfWork unitOfWork)
         {
-            this.repository = repository;
-            CarList = new ObservableCollection<Car>(repository.GetAll<Car>());
+            this.unitOfWork = unitOfWork;
+            CarList = new ObservableCollection<Car>(unitOfWork.CarRepository.GetAll());
 
-            SaveCommandOLD = new SaveCommand(repository);
-            SaveCommand = new RelayCommand(() => repository.SaveAll());
+            SaveCommandOLD = new SaveCommand(unitOfWork);
+            SaveCommand = new RelayCommand(() => unitOfWork.SaveAll());
             NewCommand = new RelayCommand(UserWantsToAddNewCar);
         }
 
         private void UserWantsToAddNewCar()
         {
             var car = new Car() { Model = "NEU", Manufacturer = "NEU", KW = 500 + DateTime.Now.Second, Color = "Pink" };
-            repository.Add(car);
+            unitOfWork.CarRepository.Add(car);
             CarList.Add(car);
         }
     }
 
     class SaveCommand : ICommand
     {
-        private readonly IRepository repo;
+        private readonly IUnitOfWork uow;
+
+        public SaveCommand(IUnitOfWork uow)
+        {
+            this.uow = uow;
+        }
 
         public event EventHandler? CanExecuteChanged;
 
@@ -79,13 +84,10 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
             return true;
         }
 
-        public SaveCommand(IRepository repo)
-        {
-            this.repo = repo;
-        }
+
         public void Execute(object? parameter)
         {
-            repo.SaveAll();
+            uow.SaveAll();
         }
     }
 }

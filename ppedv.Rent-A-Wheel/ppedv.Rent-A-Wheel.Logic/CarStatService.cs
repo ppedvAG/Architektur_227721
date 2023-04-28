@@ -5,19 +5,19 @@ namespace ppedv.Rent_A_Wheel.Logic
 {
     public class CarStatService
     {
-        private readonly IRepository repository;
+        private readonly IUnitOfWork unitOfWork;
 
-        public CarStatService(IRepository repository)
+        public CarStatService(IUnitOfWork unitOfWork)
         {
-            if (repository == null)
-                throw new ArgumentNullException(nameof(repository));
+            if (unitOfWork == null)
+                throw new ArgumentNullException(nameof(unitOfWork));
 
-            this.repository = repository;
+            this.unitOfWork = unitOfWork;
         }
 
         public Car? GetCarThatWasRentedTheMostDays()
         {
-            return repository.GetAll<Car>()
+            return unitOfWork.CarRepository.GetAll()
                              .OrderByDescending(x => x.Rents.Sum(y => (y.EndDate - y.StartDate).TotalDays))
                              .FirstOrDefault();
         }

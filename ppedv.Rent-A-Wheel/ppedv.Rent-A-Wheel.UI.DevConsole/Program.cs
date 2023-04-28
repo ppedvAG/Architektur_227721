@@ -19,14 +19,15 @@ string conString = "Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Tru
 var builder = new ContainerBuilder();
 //builder.RegisterType<EfRepository>().AsImplementedInterfaces();
 //builder.RegisterType<EfRepository>().As<IRepository>().WithParameter("conString", conString);
-builder.RegisterType<EfRepository>().As<IRepository>().WithParameter(new TypedParameter(typeof(string), conString));
 //builder.Register(x => new EfRepository(conString)).As<IRepository>();
+builder.RegisterType<EfUnitOfWork>().As<IUnitOfWork>().WithParameter(new TypedParameter(typeof(string), conString));
+//builder.RegisterType<EfRepository>().As<IRepository>().WithParameter(new TypedParameter(typeof(string), conString));
 var container = builder.Build();
-var repo = container.Resolve<IRepository>();
+var uow = container.Resolve<IUnitOfWork>();
 
 //Dependency Injection manuall by Hand
 //var repo = new ppedv.Rent_A_Wheel.Data.EfCore.EfRepository(conString);
 
 
-var carStatService = new CarStatService(repo);
+var carStatService = new CarStatService(uow);
 Console.WriteLine($"Most rented: {carStatService.GetCarThatWasRentedTheMostDays().Model}");

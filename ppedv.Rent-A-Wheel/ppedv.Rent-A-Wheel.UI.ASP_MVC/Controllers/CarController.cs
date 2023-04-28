@@ -7,23 +7,24 @@ namespace ppedv.Rent_A_Wheel.UI.ASP_MVC.Controllers
 {
     public class CarController : Controller
     {
-        private readonly IRepository repo;
+        private readonly IUnitOfWork unitOfWork;
 
-        public CarController(IRepository repo)
+        public CarController(IUnitOfWork unitOfWork)
         {
-            this.repo = repo;
+            this.unitOfWork = unitOfWork;
         }
+
 
         // GET: CarController
         public ActionResult Index()
         {
-            return View(repo.GetAll<Car>());
+            return View(unitOfWork.CarRepository.GetAll());
         }
 
         // GET: CarController/Details/5
         public ActionResult Details(int id)
         {
-            return View(repo.GetById<Car>(id));
+            return View(unitOfWork.CarRepository.GetById(id));
         }
 
         // GET: CarController/Create
@@ -39,8 +40,8 @@ namespace ppedv.Rent_A_Wheel.UI.ASP_MVC.Controllers
         {
             try
             {
-                repo.Add(car);
-                repo.SaveAll();
+                unitOfWork.CarRepository.Add(car);
+                unitOfWork.SaveAll();
 
                 return RedirectToAction(nameof(Details),car);
             }
@@ -53,7 +54,7 @@ namespace ppedv.Rent_A_Wheel.UI.ASP_MVC.Controllers
         // GET: CarController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(repo.GetById<Car>(id));
+            return View(unitOfWork.CarRepository.GetById(id));
         }
 
         // POST: CarController/Edit/5
@@ -63,8 +64,8 @@ namespace ppedv.Rent_A_Wheel.UI.ASP_MVC.Controllers
         {
             try
             {
-                repo.Update(car);
-                repo.SaveAll();
+                unitOfWork.CarRepository.Update(car);
+                unitOfWork.SaveAll();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -76,7 +77,7 @@ namespace ppedv.Rent_A_Wheel.UI.ASP_MVC.Controllers
         // GET: CarController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View(repo.GetById<Car>(id));
+            return View(unitOfWork.CarRepository.GetById(id));
         }
 
         // POST: CarController/Delete/5
@@ -87,8 +88,8 @@ namespace ppedv.Rent_A_Wheel.UI.ASP_MVC.Controllers
             try
             {
 
-                repo.Delete<Car>(id);
-                repo.SaveAll();
+                unitOfWork.CarRepository.Delete(id);
+                unitOfWork.SaveAll();
                 return RedirectToAction(nameof(Index));
             }
             catch

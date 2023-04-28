@@ -13,7 +13,8 @@ builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.Re
 
 string conString = "Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Trusted_Connection=true;";
 
-builder.Services.AddTransient<IRepository, EfRepository>(x => new EfRepository(conString));
+//builder.Services.AddTransient<IRepository, EfRepository>(x => new EfRepository(conString));
+builder.Services.AddTransient<IUnitOfWork, EfUnitOfWork>(x => new EfUnitOfWork(conString));
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -10,49 +10,51 @@ namespace ppedv.Rent_A_Wheel.API.REST.Controllers
     [ApiController]
     public class CarController : ControllerBase
     {
-        private readonly IRepository repo;
+        private readonly IUnitOfWork unitOfWork;
 
-        public CarController(IRepository repo)
+        public CarController(IUnitOfWork unitOfWork)
         {
-            this.repo = repo;
+            this.unitOfWork = unitOfWork;
         }
+
+
 
         // GET: api/<CarController>
         [HttpGet]
         public IEnumerable<Car> Get()
         {
-            return repo.GetAll<Car>();
+            return unitOfWork.CarRepository.GetAll();
         }
 
         // GET api/<CarController>/5
         [HttpGet("{id}")]
         public Car Get(int id)
         {
-            return repo.GetById<Car>(id) ;
+            return unitOfWork.CarRepository.GetById(id);
         }
 
         // POST api/<CarController>
         [HttpPost]
         public void Post([FromBody] Car value)
         {
-            repo.Add<Car>(value);
-            repo.SaveAll();
+            unitOfWork.CarRepository.Add(value);
+            unitOfWork.SaveAll();
         }
 
         // PUT api/<CarController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Car value)
         {
-            repo.Update<Car>(value);
-            repo.SaveAll();
+            unitOfWork.CarRepository.Update(value);
+            unitOfWork.SaveAll();
         }
 
         // DELETE api/<CarController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            repo.Delete<Car>(id);
-            repo.SaveAll();
+            unitOfWork.CarRepository.Delete(id);
+            unitOfWork.SaveAll();
         }
     }
 }
