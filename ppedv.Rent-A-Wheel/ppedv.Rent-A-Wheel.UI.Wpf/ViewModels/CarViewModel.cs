@@ -67,7 +67,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
             NewCommand = new RelayCommand(UserWantsToAddNewCar);
             CreateDemoDatenCommand = new RelayCommand(() =>
             {
-                demoDatenService.CreateDemoData(unitOfWork);
+                demoDatenService.CreateAndStoreDemoData(unitOfWork);
                 CarList.Clear();
                 unitOfWork.CarRepository.GetAll().ToList().ForEach(car => CarList.Add(car));
             });

@@ -17,7 +17,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.Tests.ViewModels
             var serviceMock = new Mock<ICarStatService>();
             serviceMock.Setup(x => x.GetCarThatWasRentedTheMostDays()).Returns(car);
 
-            var vm = new CarViewModel(uowMock.Object, serviceMock.Object);
+            var vm = new CarViewModel(uowMock.Object, serviceMock.Object,null);
             vm.SelectedCar = car;
 
             Assert.True(vm.IsSelectedCarTheMostRented);
@@ -34,7 +34,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.Tests.ViewModels
             var serviceMock = new Mock<ICarStatService>();
             serviceMock.Setup(x => x.GetCarThatWasRentedTheMostDays()).Returns(car2);
 
-            var vm = new CarViewModel(uowMock.Object, serviceMock.Object);
+            var vm = new CarViewModel(uowMock.Object, serviceMock.Object,null);
             vm.SelectedCar = car;
 
             Assert.False(vm.IsSelectedCarTheMostRented);
@@ -48,7 +48,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.Tests.ViewModels
             uowMock.Setup(x => x.CarRepository).Returns(repoMock.Object);
             var serviceMock = new Mock<ICarStatService>();
 
-            var vm = new CarViewModel(uowMock.Object, serviceMock.Object);
+            var vm = new CarViewModel(uowMock.Object, serviceMock.Object,null);
             vm.SelectedCar = null;
 
             Assert.False(vm.IsSelectedCarTheMostRented);
@@ -64,7 +64,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.Tests.ViewModels
             var serviceMock = new Mock<ICarStatService>();
             serviceMock.Setup(x => x.GetCarThatWasRentedTheMostDays()).Returns(car);
 
-            var vm = new CarViewModel(uowMock.Object, serviceMock.Object);
+            var vm = new CarViewModel(uowMock.Object, serviceMock.Object,null);
             vm.SelectedCar = null;
 
             Assert.False(vm.IsSelectedCarTheMostRented);
@@ -79,7 +79,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.Tests.ViewModels
             uowMock.Setup(x => x.CarRepository).Returns(repoMock.Object);
             var serviceMock = new Mock<ICarStatService>();
 
-            var vm = new CarViewModel(uowMock.Object, serviceMock.Object);
+            var vm = new CarViewModel(uowMock.Object, serviceMock.Object,null);
             vm.SelectedCar = car;
 
             Assert.False(vm.IsSelectedCarTheMostRented);

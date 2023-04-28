@@ -4,10 +4,10 @@ namespace ppedv.Rent_A_Wheel.Model.Contracts
 {
     public interface IDemoDatenService
     {
-        Car GetDemoCar();
-        Customer GetDemoCustomer();
-        Rent GetDemoRent();
+        Car CreateDemoCar();
+        Customer CreateDemoCustomer();
+        Rent CreateDemoRent();
 
-        void CreateDemoData(IUnitOfWork unitOfWork, int amount = 10);
+        void CreateAndStoreDemoData(IUnitOfWork unitOfWork, int amount = 10);
     }
 }

@@ -6,17 +6,17 @@ namespace ppedv.Rent_A_Wheel.Demodaten
 {
     public class DemoDataService : IDemoDatenService
     {
-        public void CreateDemoData(IUnitOfWork unitOfWork, int amount = 10)
+        public void CreateAndStoreDemoData(IUnitOfWork unitOfWork, int amount = 10)
         {
             for (int i = 0; i < amount; i++)
             {
-                var rent = GetDemoRent();
+                var rent = CreateDemoRent();
                 unitOfWork.RentRepository.Add(rent);
             }
             unitOfWork.SaveAll();
         }
 
-        public Car GetDemoCar()
+        public Car CreateDemoCar()
         {
             var faker = new Faker<Car>()
                 .RuleFor(x => x.Manufacturer, x => x.Vehicle.Manufacturer())
@@ -29,16 +29,16 @@ namespace ppedv.Rent_A_Wheel.Demodaten
             return faker.Generate();
         }
 
-        public Customer GetDemoCustomer()
+        public Customer CreateDemoCustomer()
         {
-            var faker = new Faker<Customer>()
+            var faker = new Faker<Customer>("de")
                 .RuleFor(x => x.BirthDate, x => x.Date.Past(70))
                 .RuleFor(x => x.Name, x => x.Name.FullName());
 
             return faker.Generate();
         }
 
-        public Rent GetDemoRent()
+        public Rent CreateDemoRent()
         {
             var faker = new Faker<Rent>()
                          .RuleFor(x => x.OrderDate, x => x.Date.Recent(10))
@@ -46,8 +46,8 @@ namespace ppedv.Rent_A_Wheel.Demodaten
                           .RuleFor(x => x.EndDate, x => x.Date.Soon(10))
                           .RuleFor(x => x.StartLocation, x => x.Address.FullAddress())
                           .RuleFor(x => x.EndLocation, x => x.Address.FullAddress())
-                          .RuleFor(x => x.Customer, GetDemoCustomer())
-                          .RuleFor(x => x.Car, GetDemoCar());
+                          .RuleFor(x => x.Customer, CreateDemoCustomer())
+                          .RuleFor(x => x.Car, CreateDemoCar());
 
             return faker.Generate();
         }
