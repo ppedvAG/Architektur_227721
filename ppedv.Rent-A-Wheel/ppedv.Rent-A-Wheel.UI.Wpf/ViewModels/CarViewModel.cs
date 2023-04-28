@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
 {
-    internal class CarViewModel : ObservableObject
+    public class CarViewModel : ObservableObject
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly ICarStatService carStatService;
