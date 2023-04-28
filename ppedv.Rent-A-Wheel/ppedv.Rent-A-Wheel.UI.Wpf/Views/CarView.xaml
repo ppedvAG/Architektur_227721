@@ -34,6 +34,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Label>Manufacturer</Label>
@@ -51,6 +52,10 @@
                 <TextBox Text="{Binding SelectedCar.Seats}" Grid.Row="4" Grid.Column="1"/>
                 <Label Grid.Row="5">Color</Label>
                 <TextBox Text="{Binding SelectedCar.Color}" Grid.Row="5" Grid.Column="1"/>
+                <Label Grid.Row="6">Is most rented</Label>
+                <CheckBox IsChecked="{Binding IsSelectedCarTheMostRented,Mode=OneWay}" 
+                          IsEnabled="False" 
+                          Grid.Row="6" Grid.Column="1"/>
             </Grid>
         </Grid>
     </DockPanel>

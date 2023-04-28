@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.UI.DevCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.UI.ASP_MVC", "ppedv.Rent-A-Wheel.UI.ASP_MVC\ppedv.Rent-A-Wheel.UI.ASP_MVC.csproj", "{605E0797-467D-4EEA-B73D-E7472A061B12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ppedv.Rent-A-Wheel.API.REST", "ppedv.Rent-A-Wheel.API.REST\ppedv.Rent-A-Wheel.API.REST.csproj", "{28E09D5C-1DEE-4B58-9217-25B8C8FC51E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ppedv.Rent-A-Wheel.API.REST", "ppedv.Rent-A-Wheel.API.REST\ppedv.Rent-A-Wheel.API.REST.csproj", "{28E09D5C-1DEE-4B58-9217-25B8C8FC51E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

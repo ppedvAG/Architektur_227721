@@ -14,6 +14,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
     internal class CarViewModel : ObservableObject
     {
         private readonly IUnitOfWork unitOfWork;
+        private readonly ICarStatService carStatService;
         private Car selectedCar;
 
 
@@ -29,6 +30,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
                 //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PS"));
                 OnPropertyChanged(nameof(SelectedCar));
                 OnPropertyChanged(nameof(PS));
+                OnPropertyChanged(nameof(IsSelectedCarTheMostRented));
             }
         }
         public ICommand SaveCommandOLD { get; set; }
@@ -50,14 +52,23 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
         //public CarViewModel() : this(new Data.EfCore.EfRepository("Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Trusted_Connection=true;"))
         //{ }
 
-        public CarViewModel(IUnitOfWork unitOfWork)
+        public CarViewModel(IUnitOfWork unitOfWork, ICarStatService carStatService)
         {
             this.unitOfWork = unitOfWork;
+            this.carStatService = carStatService;
+            mostRentedCar = carStatService.GetCarThatWasRentedTheMostDays();
             CarList = new ObservableCollection<Car>(unitOfWork.CarRepository.GetAll());
 
             SaveCommandOLD = new SaveCommand(unitOfWork);
             SaveCommand = new RelayCommand(() => unitOfWork.SaveAll());
             NewCommand = new RelayCommand(UserWantsToAddNewCar);
+        }
+
+
+        private Car? mostRentedCar;
+        public bool IsSelectedCarTheMostRented
+        {
+            get => selectedCar?.Id == mostRentedCar?.Id;
         }
 
         private void UserWantsToAddNewCar()

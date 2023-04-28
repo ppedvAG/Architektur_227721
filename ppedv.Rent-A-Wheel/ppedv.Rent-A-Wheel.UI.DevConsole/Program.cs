@@ -17,11 +17,9 @@ string conString = "Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Tru
 
 //Di per AutoFac
 var builder = new ContainerBuilder();
-//builder.RegisterType<EfRepository>().AsImplementedInterfaces();
-//builder.RegisterType<EfRepository>().As<IRepository>().WithParameter("conString", conString);
-//builder.Register(x => new EfRepository(conString)).As<IRepository>();
+
+builder.RegisterType<CarStatService>().AsImplementedInterfaces();
 builder.RegisterType<EfUnitOfWork>().As<IUnitOfWork>().WithParameter(new TypedParameter(typeof(string), conString));
-//builder.RegisterType<EfRepository>().As<IRepository>().WithParameter(new TypedParameter(typeof(string), conString));
 var container = builder.Build();
 var uow = container.Resolve<IUnitOfWork>();
 
@@ -29,7 +27,7 @@ var uow = container.Resolve<IUnitOfWork>();
 //var repo = new ppedv.Rent_A_Wheel.Data.EfCore.EfRepository(conString);
 
 
-var carStatService = new CarStatService(uow);
+var carStatService = container.Resolve<ICarStatService>();
 Console.WriteLine($"Most rented: {carStatService.GetCarThatWasRentedTheMostDays().Model}");
 
 var today = DateTime.Now;
