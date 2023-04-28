@@ -11,7 +11,7 @@ namespace ppedv.Rent_A_Wheel.Data.EfCore
             context = new EfContext(conString);
         }
 
-        public IRepository<Car> CarRepository => new EfRepository<Car>(context); //todo: Lazy + cache 
+        public ICarRepository CarRepository => new EfCarRepository(context); //todo: Lazy + cache 
 
         public IRepository<Customer> CustomerRepository => new EfRepository<Customer>(context);
 

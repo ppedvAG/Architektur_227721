@@ -10,4 +10,9 @@ namespace ppedv.Rent_A_Wheel.Model.Contracts
         void Update(T entity);
         void Delete(int id);
     }
+
+    public interface ICarRepository : IRepository<Car>
+    {
+        IEnumerable<Car> GetCarBySpecialStoreProc();
+    }
 }

@@ -1,8 +1,21 @@
-﻿using ppedv.Rent_A_Wheel.Model.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using ppedv.Rent_A_Wheel.Model.Contracts;
 using ppedv.Rent_A_Wheel.Model.Domain;
 
 namespace ppedv.Rent_A_Wheel.Data.EfCore
 {
+
+    public class EfCarRepository : EfRepository<Car>, ICarRepository
+    {
+        public EfCarRepository(EfContext context) : base(context)
+        { }
+
+        public IEnumerable<Car> GetCarBySpecialStoreProc()
+        {
+            return context.Cars.FromSql($"exec MyStoredProc").ToList();
+        }
+    }
+
 
     public class EfRepository<T> : IRepository<T> where T : Entity
     {
