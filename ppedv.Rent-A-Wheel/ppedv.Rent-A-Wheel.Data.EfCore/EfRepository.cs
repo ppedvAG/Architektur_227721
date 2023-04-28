@@ -48,6 +48,11 @@ namespace ppedv.Rent_A_Wheel.Data.EfCore
             return context.Find<T>(id);
         }
 
+        public IQueryable<T> Query()
+        {
+            return context.Set<T>();
+        }
+
         public void Update(T entity)
         {
             context.Update(entity);

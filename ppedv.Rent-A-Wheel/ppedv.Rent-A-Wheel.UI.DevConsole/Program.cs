@@ -31,3 +31,13 @@ var uow = container.Resolve<IUnitOfWork>();
 
 var carStatService = new CarStatService(uow);
 Console.WriteLine($"Most rented: {carStatService.GetCarThatWasRentedTheMostDays().Model}");
+
+var today = DateTime.Now;
+var openRents = uow.RentRepository.Query()
+                   .Where(r => r.StartDate <= today && r.EndDate >= today)
+                   .ToList();
+foreach (var rent in openRents)
+{
+    Console.WriteLine($"{rent.Car.Model}");
+}
+
