@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ppedv.Rent_A_Wheel.Data.EfCore;
+using ppedv.Rent_A_Wheel.Demodaten;
 using ppedv.Rent_A_Wheel.Logic;
 using ppedv.Rent_A_Wheel.Model.Contracts;
 using ppedv.Rent_A_Wheel.UI.Wpf.ViewModels;
@@ -40,6 +41,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf
 
             services.AddSingleton<CarViewModel>();
             services.AddSingleton<ICarStatService, CarStatService>();
+            services.AddSingleton<IDemoDatenService, DemoDataService>();
 
             return services.BuildServiceProvider();
         }

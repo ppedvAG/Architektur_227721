@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="34.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ppedv.Rent-A-Wheel.Model\ppedv.Rent-A-Wheel.Model.csproj" />
   </ItemGroup>
 

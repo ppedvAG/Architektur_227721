@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Common;
+using System.Linq;
 using System.Windows.Input;
 
 namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
@@ -15,6 +16,7 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly ICarStatService carStatService;
+        private readonly IDemoDatenService demoDatenService;
         private Car selectedCar;
 
 
@@ -52,17 +54,26 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
         //public CarViewModel() : this(new Data.EfCore.EfRepository("Server=(localdb)\\mssqllocaldb;Database=Rent-A-Wheel_dev;Trusted_Connection=true;"))
         //{ }
 
-        public CarViewModel(IUnitOfWork unitOfWork, ICarStatService carStatService)
+        public CarViewModel(IUnitOfWork unitOfWork, ICarStatService carStatService, IDemoDatenService demoDatenService)
         {
             this.unitOfWork = unitOfWork;
             this.carStatService = carStatService;
+            this.demoDatenService = demoDatenService;
             mostRentedCar = carStatService.GetCarThatWasRentedTheMostDays();
             CarList = new ObservableCollection<Car>(unitOfWork.CarRepository.GetAll());
 
             SaveCommandOLD = new SaveCommand(unitOfWork);
             SaveCommand = new RelayCommand(() => unitOfWork.SaveAll());
             NewCommand = new RelayCommand(UserWantsToAddNewCar);
+            CreateDemoDatenCommand = new RelayCommand(() =>
+            {
+                demoDatenService.CreateDemoData(unitOfWork);
+                CarList.Clear();
+                unitOfWork.CarRepository.GetAll().ToList().ForEach(car => CarList.Add(car));
+            });
         }
+
+        public ICommand CreateDemoDatenCommand { get; set; }
 
 
         private Car? mostRentedCar;

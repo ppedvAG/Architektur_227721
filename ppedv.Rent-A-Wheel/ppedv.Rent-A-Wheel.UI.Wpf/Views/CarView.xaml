@@ -11,6 +11,7 @@
             <Button Command="{Binding SaveCommand}">💾 Speichen</Button>
             <Button Command="{Binding NewCommand}">🆕 Neu</Button>
             <Button>❌ Löschen</Button>
+            <Button Command="{Binding CreateDemoDatenCommand}">🚗🚗🚗 Demodaten</Button>
         </WrapPanel>
         <Grid>
             <Grid.ColumnDefinitions>

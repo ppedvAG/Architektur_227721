@@ -8,7 +8,12 @@ namespace ppedv.Rent_A_Wheel.Demodaten
     {
         public void CreateDemoData(IUnitOfWork unitOfWork, int amount = 10)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < amount; i++)
+            {
+                var rent = GetDemoRent();
+                unitOfWork.RentRepository.Add(rent);
+            }
+            unitOfWork.SaveAll();
         }
 
         public Car GetDemoCar()
