@@ -74,8 +74,8 @@ namespace ppedv.Rent_A_Wheel.API.REST.Controllers
         }
 
         // PUT api/<CarController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] CarDTO value)
+        [HttpPut()]
+        public void Put( [FromBody] CarDTO value)
         {
             unitOfWork.CarRepository.Update(MapCarDTOToCar(value));
             unitOfWork.SaveAll();
