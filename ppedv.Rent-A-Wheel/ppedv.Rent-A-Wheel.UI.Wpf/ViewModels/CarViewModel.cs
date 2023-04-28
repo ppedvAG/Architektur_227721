@@ -68,7 +68,12 @@ namespace ppedv.Rent_A_Wheel.UI.Wpf.ViewModels
         private Car? mostRentedCar;
         public bool IsSelectedCarTheMostRented
         {
-            get => selectedCar?.Id == mostRentedCar?.Id;
+            get
+            {
+                if (mostRentedCar == null && selectedCar == null)
+                    return false;
+                return selectedCar?.Id == mostRentedCar?.Id;
+            }
         }
 
         private void UserWantsToAddNewCar()
